@@ -1,6 +1,29 @@
-# Creating and Setting up virtual host for the website by Nginx 
+# Setting up virtual host for the website by Nginx 
 
-<h2>1. Installing Nginx </h2>
+<h1>What is Nginx?</h1>
+
+Nginx (pronounced "engine-x") is an open-source web server software that is used to serve web content, handle reverse proxying, load balancing, and caching, among other things. It is highly scalable and efficient, designed to handle many simultaneous connections with minimal resource usage.
+
+<h1>How Nginx Helps in Setting Up Virtual Hosts</h1>
+
+<h4>Multiple Websites on One Server : </h4>
+
+Virtual hosts allow you to host multiple websites on a single server, each with its own configuration. This is ideal for situations where you want to run several domains or subdomains on the same server.
+
+<h4>Server Blocks for Each Website : </h4>
+
+Nginx uses server blocks to define the settings for each website (virtual host). A server block specifies the domain name, document root, port, and other configurations for that particular site.
+
+<h4>Domain-Based Virtual Hosting : </h4>
+
+Nginx can serve different websites based on the domain name in the client request. This is the most common type of virtual hosting, called name-based virtual hosting.
+For example, a single server could serve example1.com and example2.com with distinct content by configuring separate server blocks for each domain.
+
+<h4>IP-Based or Port-Based Virtual Hosting :</h4>
+
+You can also configure virtual hosts based on IP addresses or ports if you need different websites to respond on different IPs or ports.
+
+# 1. Installing Nginx
 
 ~sudo apt update 
 
@@ -14,7 +37,7 @@ Type "localhost" in your browser
 
 
 
-<h2>2. Creating our own website</h2>
+# 2. Creating our own website
 
 Default page is placed in /var/www/html/ location. You can place your static pages here, or use virtual host and place it other location.
 
@@ -32,7 +55,7 @@ Let’s create simple HTML page in /var/www/tutorial/ (it can be anything you wa
 
 
 
-<h2>3. Setting up virtual host</h2>
+# 3. Setting up virtual host
 
 
 To set up virtual host, we need to create file in /etc/nginx/sites-enabled/ directory.
@@ -44,7 +67,7 @@ For this, we will make our site available on 81 port, not the standard 80 port. 
 ~sudo "${EDITOR:-vi}" tutorial => Save your configuration code here 
 
 
-<h2>4. Activating virtual host and testing results</h2>
+# 4. Activating virtual host and testing results
 
 To make our site working, simply restart Nginx service.
 
