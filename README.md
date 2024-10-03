@@ -25,9 +25,9 @@ You can also configure virtual hosts based on IP addresses or ports if you need 
 
 # 1. Installing Nginx
 
-~sudo apt update 
+    sudo apt update 
 
-~sudo apt install nginx
+    sudo apt install nginx
 
 Type "localhost" in your browser
 
@@ -45,13 +45,13 @@ Default page is placed in /var/www/html/ location. You can place your static pag
 
 Let’s create simple HTML page in /var/www/tutorial/ (it can be anything you want). Create index.html file in this location.
 
-~cd /var/www
+    cd /var/www
 
-~sudo mkdir tutorial
+    sudo mkdir tutorial
 
-~cd tutorial
+    cd tutorial
 
-~sudo "${EDITOR:-vi}" index.html
+    sudo "${EDITOR:-vi}" index.html
 
 
 
@@ -62,16 +62,16 @@ To set up virtual host, we need to create file in /etc/nginx/sites-enabled/ dire
 
 For this, we will make our site available on 81 port, not the standard 80 port. You can change it if you would like to.
 
-~cd /etc/nginx/sites-enabled
+    cd /etc/nginx/sites-enabled
 
-~sudo "${EDITOR:-vi}" tutorial => Save your configuration code here 
+    sudo "${EDITOR:-vi}" tutorial => Save your configuration code here 
 
 
 # 4. Activating virtual host and testing results
 
 To make our site working, simply restart Nginx service.
 
-~sudo service nginx restart
+    sudo service nginx restart
 
 Let’s check if everything works as it should. Open our newly created site in web browser. Remember that we used :81 port.
 
